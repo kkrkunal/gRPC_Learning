@@ -15,6 +15,7 @@ jobs:
           update: true
           install: >-
             mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-ninja
             mingw-w64-x86_64-cmake
             mingw-w64-x86_64-grpc
             mingw-w64-x86_64-protobuf
@@ -22,7 +23,7 @@ jobs:
       - name: Build with CMake
         shell: msys2 {0}
         run: |
-          cmake -B build -G "MinGW Makefiles"
+          cmake -B build -G "Ninja"
           cmake --build build
 
       - name: Upload Binaries
