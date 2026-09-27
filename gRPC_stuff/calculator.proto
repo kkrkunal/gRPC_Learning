@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+//Input operands
+message operands2
+{
+    int32 a = 1;
+    int32 b = 2;
+}
+
+//Output result
+message result1
+{
+    int32 res1 = 1;
+}
+
+service ProtocolServiceTest
+{
+    rpc Add (operands2) returns (result1);
+    rpc Sub (operands2) returns (result1);
+    rpc Mul (operands2) returns (result1);
+    rpc Div (operands2) returns (result1);
+}
